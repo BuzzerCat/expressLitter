@@ -3,8 +3,8 @@ var express = require('express')
   , LocalStrategy = require('passport-local').Strategy;
 
 app.configure(function() {
-   app.use(express.session({ secret: 'keyboard cat'})
-}
+   app.use(express.session({ secret: 'keyboard cat'}));
+});
 
 var app = express();
 
