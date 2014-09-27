@@ -5,6 +5,7 @@ var express = require('express')
 var app = express();
 
 app.configure(function() {
+   app.set('view engine', 'ejs');
    app.use(express.session({ secret: 'keyboard cat'}));
 });
 
