@@ -14,3 +14,4 @@ app.get('/login', function(req, res){
 });
 
 app.listen(4000);
+//at this point I has to do an npm install ejs
