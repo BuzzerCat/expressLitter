@@ -3,7 +3,7 @@ var express = require('express')
   , LocalStrategy = require('passport-local').Strategy;
 
 
-app = express()
+var app = express();
 
 app.get('/login', function(req, res){
   res.render('login', { user: req.user, message: req.session.messages });
