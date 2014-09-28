@@ -6,6 +6,7 @@ var express = require('express')
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
+   console.log(  "local strategy used.");
 
 }));
 
