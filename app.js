@@ -112,3 +112,9 @@ app.post('/login', function(req, res, next) {
 
 app.listen(4000);
 //at this point I has to do an npm install ejs
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) { return next(); }
+  res.redirect('/login')
+}
+
+
