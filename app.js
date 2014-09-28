@@ -29,16 +29,16 @@ app.get('/login', function(req, res){
 app.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
     if (err) {
-       console.log(err);
+       console.log("1:"+err);
        return next(err); }
     if (!user) {
-      console.log(info.message)
+      console.log("2:"+ info.message)
       req.session.messages =  [info.message];
       return res.redirect('/login')
     }
     req.logIn(user, function(err) {
       if (err) { 
-      console.log(err);
+      console.log("3:"+err);
       return next(err); }
       return res.redirect('/');
     });
