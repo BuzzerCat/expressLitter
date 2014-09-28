@@ -64,7 +64,10 @@ passport.deserializeUser(function(id, done) {
 var app = express();
 
 app.configure(function() {
-   app.set('view engine', 'ejs');
+  app.set('views', __dirname + '/views');
+  app.set('view engine', 'ejs');
+  app.engine('ejs', require('ejs-locals'));
+
    app.use(express.session({ secret: 'keyboard cat'}));
    app.use(express.bodyParser());
 
