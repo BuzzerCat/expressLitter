@@ -17,6 +17,8 @@ var app = express();
 app.configure(function() {
    app.set('view engine', 'ejs');
    app.use(express.session({ secret: 'keyboard cat'}));
+   app.use(express.bodyParser());
+
    app.use(passport.initialize());
    app.use(passport.session());
 
