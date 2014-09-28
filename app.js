@@ -4,12 +4,21 @@ var express = require('express')
 
 
 
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+
+));
+
+
 
 var app = express();
 
 app.configure(function() {
    app.set('view engine', 'ejs');
    app.use(express.session({ secret: 'keyboard cat'}));
+   app.use(passport.initialize());
+   app.use(passport.session());
+
 });
 
 app.get('/login', function(req, res){
