@@ -42,6 +42,10 @@ passport.use(new LocalStrategy(
 }));
 
 
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
 
 var app = express();
 
