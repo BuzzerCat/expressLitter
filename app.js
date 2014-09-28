@@ -32,7 +32,7 @@ app.post('/login', function(req, res, next) {
        console.log("1:"+err);
        return next(err); }
     if (!user) {
-      console.log("2:"+ info.message)
+      console.log("2:"+ info.message + user)
       req.session.messages =  [info.message];
       return res.redirect('/login')
     }
