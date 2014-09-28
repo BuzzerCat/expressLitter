@@ -5,6 +5,9 @@ var express = require('express')
 passport.use(new LocalStrategy(
   function(username, password, done) {
     // asynchronous verification, for effect...
+    process.nextTick(function () {
+    });
+
 }))
 
 
