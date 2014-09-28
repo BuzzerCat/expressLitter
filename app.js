@@ -85,6 +85,11 @@ app.get('/account', ensureAuthenticated, function(req, res){
 });
 
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 app.get('/login', function(req, res){
   res.render('login', { user: req.user, message: req.session.messages });
 });
