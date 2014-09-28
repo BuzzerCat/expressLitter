@@ -3,6 +3,17 @@ var express = require('express')
   , LocalStrategy = require('passport-local').Strategy;
 
 
+function findByUsername(username, fn) {
+  for (var i = 0, len = users.length; i < len; i++) {
+    var user = users[i];
+    if (user.username === username) {
+      return fn(null, user);
+    }
+  }
+  return fn(null, null);
+}
+
+
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
