@@ -73,6 +73,11 @@ app.configure(function() {
 
 });
 
+app.get('/', function(req, res){
+  res.render('index', { user: req.user });
+});
+
+
 app.get('/login', function(req, res){
   res.render('login', { user: req.user, message: req.session.messages });
 });
